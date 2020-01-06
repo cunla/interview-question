@@ -39,6 +39,7 @@ Sending `http://localhost:5000/long?tiny=44C0173` **immediately** should give ba
 Sending `http://localhost:5000/long?tiny=44C0173` **after 1/2 hour** should give back `URL not found in DB`
 
 ## Guidelines
+* Fork this repository and push your commits
 * Use the spring-boot template given
 * Write unit-tests, integration-tests
 * Write code documentation
