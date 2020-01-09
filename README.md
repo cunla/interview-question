@@ -29,7 +29,7 @@ Restarting the spring-boot app and Sending `http://localhost:5000/long?tiny=44C0
 
 ### Part three - Adding timeout for data
 In order to avoid extremely large DB, we would like to purge URLs older than 1/2 hour.
-Check how to create async tasks in Spring and go over the DB.
+Check how to create a scheduled task in Spring to go over the DB and purge records older than 30mins.
 
 #### Acceptance criteria
 Running `http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resources/schemas/definitions.json#38` Should return a tiny expression (e.g., `44C0173`)
