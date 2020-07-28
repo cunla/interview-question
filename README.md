@@ -41,13 +41,16 @@ Sending `http://localhost:5000/long?tiny=44C0173` **after 1/2 hour** should give
 ## Guidelines
 * Fork this repository and push your commits
 * Use the spring-boot template given
-* Write unit-tests, integration-tests
+* Write unit-tests, integration-tests 
+  * Write in javadocs what scenarios were tested
+  * Higher coverage is better
 * Write code documentation
 * All classes given are meant to used as references - once they are not needed, they can be removed.
-* This project uses [lombok](https://projectlombok.org/) - please use it when possible
-* Add the required files to .gitignore, etc.
+* This project uses [lombok](https://projectlombok.org/) - use it when possible
+* Properly organize your project with `.gitignore` file, `readme` file explaining how to run the project, etc.
 * Do all 3 parts, and use git tags to mark the commit fulfilling part 1, part 2 and part 3.
 
 ## Deliverables
-* Send us a link to a repository fulfilling the requirements and the three tags to check part 1, 2, and 3.
-
+* Send us a link to a repository fulfilling the requirements with the three tags to check part 1, 2, and 3.
+* Your code will be tested using different tests.
+* Successful implementation will move to interview.
