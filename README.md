@@ -46,3 +46,8 @@ Sending `http://localhost:5000/long?tiny=44C0173` **after 1/2 hour** should give
 * All classes given are meant to used as references - once they are not needed, they can be removed.
 * This project uses [lombok](https://projectlombok.org/) - please use it when possible
 * Add the required files to .gitignore, etc.
+* Do all 3 parts, and use git tags to mark the commit fulfilling part 1, part 2 and part 3.
+
+## Deliverables
+* Send us a link to a repository fulfilling the requirements and the three tags to check part 1, 2, and 3.
+
