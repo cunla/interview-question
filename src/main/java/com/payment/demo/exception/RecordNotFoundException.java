@@ -1,4 +1,4 @@
-package com.example.demo.persistence;
+package com.payment.demo.exception;
 
 public class RecordNotFoundException extends Exception {
     public RecordNotFoundException(String msg) {
