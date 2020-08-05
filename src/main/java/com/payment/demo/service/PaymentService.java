@@ -1,5 +1,7 @@
 package com.payment.demo.service;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -42,5 +44,30 @@ import com.payment.demo.persistence.UrlRepository;
 	            throw new RecordNotFoundException("No hashCode exist for given URL");
 	        }
 	    }
+	    
+	    
+	    public void purgeData(List<URLEntity> urls) throws RecordNotFoundException {
+			logger.info("PaymentService :: getHashCodeByURL ");
+			try {
+				if (urls != null && urls.size() > 0) {
+					{
+						for (URLEntity url : urls) {
+							System.out.println("inside delete" + url.getId());
+							urlRepository.deleteById(url.getId());
+						}
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new RecordNotFoundException("Error occured while deleting URL data");
+			}
+		}
+
+		public List<URLEntity> retrieveRecordsOlderThan30Mins() {
+			logger.info("PaymentService :: getHashCodeByURL ");
+			List<URLEntity> urls = urlRepository.findURLsOlderthan30mins();
+			urls.stream().filter(Objects::nonNull).map(url -> url.getId()).forEach(System.out::println);
+			return urls;
+		}
 
 }

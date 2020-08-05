@@ -1,5 +1,6 @@
 package com.payment.demo.persistence;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +17,7 @@ public interface UrlRepository
 	
 	@Query(value = "SELECT u FROM URLEntity u WHERE u.url = ?1")
 	Optional<URLEntity> findByURL(String url);
+	
+	@Query(value= "select u.* from tbl_url u WHERE TO_TIMESTAMP(u.insert_date,'YYYY-MM-DD hh:mm:ss') < DATEADD(MINUTE, -30,CURRENT_TIMESTAMP)", nativeQuery = true)
+	List<URLEntity> findURLsOlderthan30mins();
  }
