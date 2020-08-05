@@ -4,7 +4,6 @@ server:
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
-#    url: jdbc:h2:file:./demo
     driverClassName: org.h2.Driver
     username: sa
     password: password
@@ -16,5 +15,10 @@ spring:
       ddl-auto: update
   h2:
     console:
-      enabled: false
-
+      enabled: true
+jobs:
+ enabled: true
+ 
+url:
+ longerVersion: https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resources/schemas/definitions.json
+ shorterVersion: 44C0173

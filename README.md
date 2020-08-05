@@ -40,3 +40,43 @@ http://localhost:5000/short?tiny=44C
     "message": "Not a valid hashCode",
     "path": "/long"
 }
+
+
+
+
+##Part 2 : Implementation - Persistence ###
+
+###Positive Scenario #1(From server/property file):
+Request:  
+http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resources/schemas/definitions.json#38
+
+Response:
+44C0173
+
+
+###Positive Scenario #2(From DB):
+Request:  
+http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec1/browse/src/main/resources/schemas/definitions.json#38
+
+Response:
+44C0174
+
+
+###Positive Scenario #3(From server/property file):
+Request:
+http://localhost:5000/long?tiny=44C0174
+
+Response:
+https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec1/browse/src/main/resources/schemas/definitions.json#38
+
+
+
+###Positive Scenario #4(From server/property file):
+Request:
+http://localhost:5000/long?tiny=44C0174
+
+Response:
+https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec1/browse/src/main/resources/schemas/definitions.json#38
+
+
+
