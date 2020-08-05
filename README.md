@@ -1,15 +1,15 @@
 ##Part 1: Implementation ###
 
-###A REST API that takes as input a URL and gives back a short URL
+A REST API that takes as input a URL and gives back a short URL
 
-###Positive Scenario:
+#####Positive Scenario:
 Request:  
 http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resources/schemas/definitions.json
 
 Response:
 44C0173
 
-###Negative Scenario:
+#####Negative Scenario:
 http://localhost:5000/short?url=https://stash.backbase.com
 {
     "timestamp": "2020-08-04T22:57:28.747+0000",
@@ -21,16 +21,16 @@ http://localhost:5000/short?url=https://stash.backbase.com
 
 
 
-###A REST API that takes the short URL and gives back the original URL
+A REST API that takes the short URL and gives back the original URL
 
-###Positive Scenario:
+#####Positive Scenario:
 Request:
 http://localhost:5000/long?tiny=44C0173
 
 Response:
 https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resources/schemas/definitions.json
 
-###Negative Scenario:
+#####Negative Scenario:
 
 http://localhost:5000/short?tiny=44C
 {
@@ -46,7 +46,7 @@ http://localhost:5000/short?tiny=44C
 
 ##Part 2 : Implementation - Persistence ###
 
-###Positive Scenario #1(From server/property file):
+#####Positive Scenario #1(From server/property file):
 Request:  
 http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resources/schemas/definitions.json
 
@@ -54,7 +54,7 @@ Response:
 44C0173
 
 
-###Positive Scenario #2(From DB):
+#####Positive Scenario #2(From DB):
 Request:  
 http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec1/browse/src/main/resources/schemas/definitions.json
 
@@ -62,7 +62,7 @@ Response:
 44C0174
 
 
-###Positive Scenario #3(From server/property file):
+#####Positive Scenario #3(From server/property file):
 Request:
 http://localhost:5000/long?tiny=44C0173
 
@@ -71,7 +71,7 @@ https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/brow
 
 
 
-###Positive Scenario #4(From DB):
+#####Positive Scenario #4(From DB):
 Request:
 http://localhost:5000/long?tiny=44C0174
 
@@ -88,7 +88,7 @@ jobs:
 If scheduler finds any older records, it deletes the records and throws exception that data is not found.
 
 
-###Positive Scenario #1(From server/property file):
+#####Positive Scenario #1(From server/property file):
 Request:  
 http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resources/schemas/definitions.json
 
@@ -96,7 +96,7 @@ Response:
 44C0173
 
 
-###Positive Scenario #2(From DB):
+#####Positive Scenario #2(From DB):
 Request:  
 http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec1/browse/src/main/resources/schemas/definitions.json
 
@@ -104,7 +104,7 @@ Response:
 44C0174
 
 
-###Positive Scenario #3(From server/property file):
+#####Positive Scenario #3(From server/property file):
 Request:
 http://localhost:5000/long?tiny=44C0173
 
@@ -113,7 +113,7 @@ https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/brow
 
 
 
-###Positive Scenario #4(From DB):
+#####Positive Scenario #4(From DB):
 Request:
 http://localhost:5000/long?tiny=44C0174
 
@@ -121,7 +121,7 @@ Response:
 https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec1/browse/src/main/resources/schemas/definitions.json
 
 
-###Negative Scenario #1:
+#####Negative Scenario #1:
 
 http://localhost:5000/long?tiny=44C0174
 
@@ -133,7 +133,7 @@ http://localhost:5000/long?tiny=44C0174
     "path": "/long"
 }
 
-###Negative Scenario #2:
+#####Negative Scenario #2:
 http://localhost:5000/short?url=https://stash.backbase.com/projects/PO/repos/payment-order-integration-spec/browse/src/main/resource/schemas/definitions.json
 
 {
