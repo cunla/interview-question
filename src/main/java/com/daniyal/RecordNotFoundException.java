@@ -1,4 +1,4 @@
-package com.example.demo.persistence;
+package com.daniyal;
 
 public class RecordNotFoundException extends Exception {
     public RecordNotFoundException(String msg) {
