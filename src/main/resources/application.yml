@@ -1,5 +1,5 @@
 server:
-  port: 5000
+  port: 50000
 
 backbase:
   my_secret: ${MY_SECRET:my yaml secret}
